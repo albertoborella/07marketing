@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for tarjeta in object_list %}
+<div>
+<div class="card">
+    <div class="card-header">
+      {{tarjeta.titulo}}
+    </div>
+    <div class="card-body mx-auto">
+      {% if tarjeta.imagen %}
+      <img src="{{tarjeta.imagen.url}}" class="card-img-top" alt="...">
+      {% endif %}
+      <p class="card-text">{{tarjeta.descripcion}}</p>
+      <div class="boton">
+        <a href="#" class="btn btn-warning">Lee mas</a>
+      </div>
+    </div>
+</div>
+</div>
+{% endfor%}
+{% endblock %}
